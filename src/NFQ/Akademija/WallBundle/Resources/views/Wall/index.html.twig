@@ -1,0 +1,35 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+
+    <div>
+        Forma:
+
+        {{ form(post_form) }}
+
+    </div>
+
+    <div>
+        Wall:
+
+        {% for post in posts %}
+            <div>
+                <div>{{ post.user.username }}</div>
+                <div>{{ post.content }}</div>
+                <div><a href="{{ path('nfq_akademija_wall_like_post', {post_id: post.id}) }}">Like</a></div>
+                <div>
+                    Comments:
+                <div>
+                    {% for comment in post.comments %}
+                    {{ comment.comment }}
+                    {% endfor %}
+                    {{ render(controller('NFQAkademijaWallBundle:Comment:form', {post_id: post.id})) }}
+                </div>
+                </div>
+                <div>{{ post.created|date("Y-m-d H:i:s") }}</div>
+            </div>
+
+        {% endfor %}
+    </div>
+
+{% endblock %}

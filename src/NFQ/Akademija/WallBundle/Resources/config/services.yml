@@ -1,0 +1,7 @@
+parameters:
+    nfq_akademija_wall.post_service.class: NFQ\Akademija\WallBundle\Service\PostService
+
+services:
+    nfq_akademija_wall.post_service:
+        class: %nfq_akademija_wall.post_service.class%
+        arguments: [@doctrine.orm.entity_manager]

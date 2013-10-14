@@ -1,0 +1,21 @@
+nfq_akademija_wall_homepage:
+    pattern:  /
+    defaults: { _controller: NFQAkademijaWallBundle:Post:index }
+nfq_akademija_wall_post:
+    pattern:  /post
+    defaults: { _controller: NFQAkademijaWallBundle:Post:post }
+nfq_akademija_wall_like_post:
+    pattern:  /post/like/{post_id}
+    defaults: { _controller: NFQAkademijaWallBundle:Like:postLike }
+    requirements:
+        post_id:  \d+
+
+
+nfq_akademija_comment_form:
+    pattern:  /comment/form/{post_id}
+    defaults: { _controller: NFQAkademijaWallBundle:Comment:form }
+    requirements:
+        post_id:  \d+
+nfq_akademija_comment_post:
+    pattern:  /comment/{post_id}
+    defaults: { _controller: NFQAkademijaWallBundle:Comment:post }
