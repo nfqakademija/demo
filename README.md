@@ -20,6 +20,9 @@ Papildomai sudiegti reikalingus paketus ar vėliau patikrinti pasikeitimus infra
 
     $ vagrant provision
     
+Paleiskite paketų atnaujinimą
+    $ composer install
+    
 Prisijungti prie virtualios mašinos per ssh galima naudojant komandą:
 
     $ vagrant ssh
