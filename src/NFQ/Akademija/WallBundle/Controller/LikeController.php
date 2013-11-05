@@ -25,14 +25,14 @@ class LikeController extends Controller
 
         if($like) {
             //User already voted
-            return new Response('EXIST');
+            return new Response(json_encode(array('status' => 'EXISTS')));
         } else {
             $postLike = new ObjectLikeForPost();
             $postLike->setPost($post);
             $postLike->setUser($user);
             $em->persist($postLike);
             $em->flush();
-            return new Response('OK');
+            return new Response(json_encode(array('status' => 'OK')));
         }
     }
 
