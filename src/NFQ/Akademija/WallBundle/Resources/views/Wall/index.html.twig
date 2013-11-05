@@ -16,7 +16,7 @@
             <div>
                 <div>{{ post.user.username }}</div>
                 <div>{{ post.content }}</div>
-                <div><a href="{{ path('nfq_akademija_wall_like_post', {post_id: post.id}) }}">Like</a></div>
+                <div><a href="{{ path('nfq_akademija_wall_like_post', {post_id: post.id}) }}">Like ({{ post.likes|length }})</a></div>
                 <div>
                     Comments:
                 <div>
